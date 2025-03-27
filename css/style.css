@@ -295,11 +295,45 @@ canvas {
 .result-highlight {
     background-color: #ffd700;
     font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #e6c200;
 }
 
 .result-position {
     font-size: 1.1em;
     color: #333;
+}
+
+/* Winner styling with wreath and trophy */
+.result-position.winner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+.trophy {
+    font-size: 1.4em;
+    margin-right: 8px;
+    display: inline-block;
+    transform: translateY(-2px);
+}
+
+.wreath-left, .wreath-right {
+    font-size: 1.2em;
+    color: #228B22;
+    display: inline-block;
+}
+
+.wreath-left {
+    margin-right: 4px;
+    transform: rotate(-15deg);
+}
+
+.wreath-right {
+    margin-left: 4px;
+    transform: rotate(15deg);
 }
 
 .result-time {

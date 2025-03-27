@@ -421,10 +421,21 @@ class RaceScene extends Phaser.Scene {
                 
                 const finishTime = ((horse.finishTime - this.raceStartTime) / 1000).toFixed(2);
                 
-                resultItem.innerHTML = `
-                    <div class="result-position">${index + 1}. ${horse.name}</div>
-                    <div class="result-time">Time: ${finishTime}s</div>
-                `;
+                // Add trophy for the winner (first place)
+                if (index === 0) {
+                    resultItem.innerHTML = `
+                        <div class="result-position winner">
+                            <span class="trophy">🏆</span> 
+                            1. ${horse.name} 
+                        </div>
+                        <div class="result-time">Time: ${finishTime}s</div>
+                    `;
+                } else {
+                    resultItem.innerHTML = `
+                        <div class="result-position">${index + 1}. ${horse.name}</div>
+                        <div class="result-time">Time: ${finishTime}s</div>
+                    `;
+                }
                 resultsContent.appendChild(resultItem);
             });
         }
